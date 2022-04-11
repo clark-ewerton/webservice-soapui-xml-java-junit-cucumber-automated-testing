@@ -1,0 +1,140 @@
+[
+  {
+    "comments": [
+      {
+        "line": 1,
+        "value": "#language: pt"
+      }
+    ],
+    "line": 2,
+    "elements": [
+      {
+        "line": 4,
+        "name": "",
+        "description": "",
+        "type": "background",
+        "keyword": "Contexto",
+        "steps": [
+          {
+            "result": {
+              "duration": 164072000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "que estou trabalhando com o servico numberToDollars",
+            "match": {
+              "location": "NumberToDollars_Steps.que_estou_trabalhando_com_o_servico_numberToDollars()"
+            },
+            "keyword": "Dado "
+          }
+        ]
+      },
+      {
+        "line": 15,
+        "name": "Deve validar conversao de um numero para dollar",
+        "description": "",
+        "id": "webservice-numbertodollars;deve-validar-conversao-de-um-numero-para-dollar;;2",
+        "type": "scenario",
+        "keyword": "Esquema do Cenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4997836300,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "escolho o \"numberToDollars\" - numberToDollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "numberToDollars",
+                  "offset": 11
+                }
+              ],
+              "location": "NumberToDollars_Steps.escolho_o_numberToDollars(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1411798200,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "realizo o POST deste \"numberToDollars\" e \"NumberToDollars\" passando os parametros: \"20\" - numberToDollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "numberToDollars",
+                  "offset": 22
+                },
+                {
+                  "val": "NumberToDollars",
+                  "offset": 42
+                },
+                {
+                  "val": "20",
+                  "offset": 84
+                }
+              ],
+              "location": "NumberToDollars_Steps.realizo_o_POST_deste_e_passando_os_parametros_numberToDollars(String,String,String)"
+            },
+            "matchedColumns": [
+              0,
+              1,
+              3
+            ],
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 3151200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "valido que o status code foi \"200\" - numberToDollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                }
+              ],
+              "location": "NumberToDollars_Steps.valido_que_o_status_code_foi_numberToDollars(String)"
+            },
+            "keyword": "Entao "
+          },
+          {
+            "result": {
+              "duration": 1173892700,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "valido o response body atraves do \"twenty dollars\" - numberToDollars",
+            "match": {
+              "arguments": [
+                {
+                  "val": "twenty dollars",
+                  "offset": 35
+                }
+              ],
+              "location": "NumberToDollars_Steps.valido_o_response_body_atraves_do_numberToDollars(String)"
+            },
+            "matchedColumns": [
+              2
+            ],
+            "keyword": "E "
+          }
+        ]
+      }
+    ],
+    "name": "WebService numberToDollars",
+    "description": "",
+    "id": "webservice-numbertodollars",
+    "keyword": "Funcionalidade",
+    "uri": "numberConversion.feature"
+  }
+]
