@@ -12,47 +12,29 @@ webservice-soapui-xml-java-junit-cucumber-automated-testing/
 ├─ src/
 │  ├─ main/
 │  │  ├─ java/
-│  │  │  ├─ com/
-│  │  │  │  │  ├─ clark/
-│  │  │  │  │  │  ├─ config/
-│  │  │  │  │  │  │  ├─ Configuration.java
-│  │  │  │  │  │  │  ├─ ConfigurationManager.java
-│  │  │  │  │  │  ├─ driver/
-│  │  │  │  │  │  │  ├─ BrowserFactory.java
-│  │  │  │  │  │  │  ├─ DriverManager.java
-│  │  │  │  │  │  │  ├─ TargetFactory.java
-│  │  │  │  │  │  ├─ exceptions/
-│  │  │  │  │  │  │  ├─ HeadlessNotSupportedException.java
-│  │  │  │  │  │  │  ├─ TargetNotValidException.java
-│  │  │  │  │  │  ├─ page/
-│  │  │  │  │  │  │  ├─ ecommerce/
-│  │  │  │  │  │  │  │  ├─ HomePage.java
-│  │  │  │  │  │  │  │  ├─ CarrinhoComprasPage.java
-│  │  │  │  │  │  │  ├─ AbstractPageObject.java
-│  │  ├─ resources/
-│  │  │  ├─ log4j2.properties
+│  │  │  │  ├─ core/
+│  │  │  │  │  ├─ BaseEndpoint.java
+│  │  │  │  │  ├─ Endpoint.java
+│  │  │  │  │  ├─ EndpointFactory.java
+│  │  │  │  ├─ responseBody/
+│  │  │  │  │  ├─ ResultHandlerWebservices.java
 │  ├─ test/
 │  │  ├─ java/
-│  │  │  ├─ com/
-│  │  │  │  ├─ clark/
+│  │  │  │  │  │  ├─ numberConversion/
+│  │  │  │  │  │  │  ├─ builders/
+│  │  │  │  │  │  │  |  ├─ NumberConversionBuilder.java
+│  │  │  │  │  │  ├─ endpoints/
+│  │  │  │  │  │  │  ├─ NumberToDollars.java
+│  │  │  │  │  │  ├─ features/
+│  │  │  │  │  │  │  |  ├─ numberConversion.feature
 │  │  │  │  │  │  ├─ runner/
-│  │  │  │  │  │  │  ├─ parallel
-│  │  │  │  │  │  │  |  ├─ CucableJavaTemplate.java
-│  │  │  │  │  │  │  ├─ CucumberRunnerTest.java
-│  │  │  │  │  │  ├─ stepDefinitions/
-│  │  │  │  │  │  │  ├─ CarrinhoCompras_Steps.java
-│  │  │  │  │  │  │  ├─ Home_Steps.java
-│  │  │  │  │  │  │  ├─ Hooks.java
+│  │  │  │  │  │  │  |  ├─ RunnerNumberConversion.java
+│  │  │  │  │  │  ├─ steps/
+│  │  │  │  │  │  │  |  ├─ NumberToDollars_Steps.java
 │  │  ├─ resources/
-│  │  │  ├─ features/
-│  │  │  │  ├─ eCommerceScenarios.feature
-│  │  │  │  ├─ eCommerceScenarios2.feature
-│  │  │  ├─ general.properties
-│  │  │  ├─ grid.properties
-│  │  │  ├─ local.properties
+│  │  │  ├─ soapui/
+│  │  │  │  ├─ NumberConversion-soapui-project.xml
 ├─ .gitignore
-├─ docker-compose.yml
-├─ Jenkinsfile
 ├─ pom.xml
 ├─ README.md
 ```
