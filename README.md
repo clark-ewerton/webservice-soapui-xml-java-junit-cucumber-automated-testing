@@ -4,7 +4,7 @@ Don't forget to give this project a ⭐
 
 For this project, it was took into account the Windows as main environment! 
 
-This project was created to start the initial steps with test automation for a SOAP Web Services using SOAP's Maven library. It tests the WebService: [Number Converson](https://www.dataaccess.com/webservicesserver/NumberConversion.wso?wsdl). Which is a public SOAP Web Service, pretty simple to handle on and perform some requests.
+This project was created to start the initial steps with test automation for a SOAP Web Services using SOAP's Maven library. It tests the public WebService: [Number Converson](https://www.dataaccess.com/webservicesserver/NumberConversion.wso?wsdl). Which is a public SOAP Web Service, pretty simple to handle on and perform some requests.
 
 ## Project Structure
 ```bash
