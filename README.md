@@ -66,8 +66,8 @@ This project using the following languages and frameworks:
 * [Cucumber](https://cucumber.io/) as the tool that supports Behaviour-Driven Development(BDD) making out tests more describable
 * [Maven](https://maven.apache.org/) as the Java build tool
 * [Eclipse](https://www.eclipse.org/) as the IDE
-* [SOAPUI program](https://www.soapui.org/) as a way to create the XML's templates and link it to the Maven's project afterwards.
-* [SOAPUI's Maven library](https://www.soapui.org/docs/test-automation/maven/maven-2-x/) as the library for Maven to connect the programming logic to the program installed in your machine. It's where all the testing automating truly happens.
+* [SOAPUI program](https://www.soapui.org/) as a way to create the XML's body templates and link it to the Maven's project afterwards.
+* [SOAPUI's Maven library](https://www.soapui.org/docs/test-automation/maven/maven-2-x/) as the library for Maven to connect the programming logic to the SOAPUI's program installed in your machine. It's where all the testing automating truly happens.
 * [XML Path](https://mvnrepository.com/artifact/io.rest-assured/xml-path/3.0.0) as the library from RestAssured to make the assertions in XML's body.
 
 
