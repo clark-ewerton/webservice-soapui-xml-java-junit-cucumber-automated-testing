@@ -8,7 +8,7 @@ This project was created to start the initial steps with test automation for a S
 
 ## Project Structure
 ```bash
-selenium-java-cucumber-junit-grid-docker-jenkins/
+webservice-soapui-xml-java-junit-cucumber-automated-testing/
 ├─ src/
 │  ├─ main/
 │  │  ├─ java/
@@ -67,7 +67,7 @@ This project using the following languages and frameworks:
 * [Maven](https://maven.apache.org/) as the Java build tool
 * [Eclipse](https://www.eclipse.org/) as the IDE
 * [SOAPUI program](https://www.soapui.org/) as a way to create the XML's templates and link it to the Maven's project afterwards.
-* [SOAPUI's Maven library](https://www.soapui.org/docs/test-automation/maven/maven-2-x/) as the library for Maven to connect the programming logic to the program installed in your machine.
+* [SOAPUI's Maven library](https://www.soapui.org/docs/test-automation/maven/maven-2-x/) as the library for Maven to connect the programming logic to the program installed in your machine. It's where all the testing automating truly happens.
 * [XML Path](https://mvnrepository.com/artifact/io.rest-assured/xml-path/3.0.0) as the library from RestAssured to make the assertions in XML's body.
 
 
