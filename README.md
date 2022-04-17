@@ -6,6 +6,8 @@ For this project, it was took into account the Windows as main environment!
 
 This project was created to start the initial steps with test automation for a SOAP Web Services using SOAP's Maven library. It tests the public WebService: [Number Converson](https://www.dataaccess.com/webservicesserver/NumberConversion.wso?wsdl). Which is a public SOAP Web Service, pretty simple to handle on and perform some requests.
 
+The test scenario that I'm using here is to convert a number (two digits for example) into the number written, so that if you put '20' to convert to Dollars then the result will be 'twenty dollars'. The whole explanation is written in Medium's article: https://medium.com/@clarkewertonSilva. Please take a look.
+
 ## Project Structure
 ```bash
 webservice-soapui-xml-java-junit-cucumber-automated-testing/
