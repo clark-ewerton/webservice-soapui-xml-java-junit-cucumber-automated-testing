@@ -61,6 +61,7 @@ We know that any automation project starting with a good test architecture.
 You will see the following items in this architecture:
 
 * [Patterns Applied](#page-objects-pattern)
+* [Generate Report](#generate-report)
 
 Do you have any other items to add to this test architecture? Please do a pull request or open an issue to discuss.
 
@@ -69,3 +70,7 @@ Do you have any other items to add to this test architecture? Please do a pull r
 * Builder
 * BaseEndpoint
 
+### Generate Report
+I'm using the Cluecumber Report Plugin to generate the reports, so after you run the Runner class using Junit4 or directly into Maven, then all you have to do is execute, at the project's root, the Maven command: mvn install
+
+By doing so, the report will be generated because it's looking to the 'json' directory. Navigate into the project -> target -> cluecumber-report, then execute the file 'index.html'.
