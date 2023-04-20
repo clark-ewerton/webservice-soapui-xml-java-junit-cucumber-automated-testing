@@ -55,6 +55,10 @@ This project using the following languages and frameworks:
 * [XML Path](https://mvnrepository.com/artifact/io.rest-assured/xml-path/3.0.0) as the library from RestAssured to make the assertions in XML's body.
 
 
+## How to run it?
+
+All you have to do is run the class called 'RunnerNumberConversion' as a Junit test.
+
 ## Test architecture
 
 We know that any automation project starting with a good test architecture.
