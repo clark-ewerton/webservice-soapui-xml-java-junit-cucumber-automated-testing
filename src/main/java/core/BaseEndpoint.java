@@ -47,7 +47,7 @@ public abstract class BaseEndpoint {
 			}
 
 			if (!achou) {
-				Assert.fail("Nome do testCase na feature está diferente do projeto SOAPUI");
+				Assert.fail("Nome do testCase na feature esta diferente do projeto SOAPUI");
 			}
 
 			System.out.println("Running SoapUI test: " + testCase);

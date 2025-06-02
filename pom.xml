@@ -5,28 +5,81 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<java-compiler.version>8</java-compiler.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	 <aspectj.version>1.9.6</aspectj.version>
+		<java.version>21</java.version>
+		<project.encondig>UTF-8</project.encondig>
+            <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
+            <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
-		<maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-		<maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
+		<maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>3.0.0-M8</maven-failsafe-plugin.version>
 		<cucumber.report.json.location>${project.basedir}\json\</cucumber.report.json.location>
 		<generated.report.location>${project.build.directory}\cluecumber-report</generated.report.location>
+		      <junit-jupiter.version>5.9.2</junit-jupiter.version>
+            <junit-platform-suite.version>1.9.2</junit-platform-suite.version>
+        <cucumber.version>7.5.0</cucumber.version>
+		<allure.cmd.download.url>
+			https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline
+		</allure.cmd.download.url>
+		<allure-maven.version>2.15.2</allure-maven.version>
+        <allure.version>2.29.0</allure.version>
+        <cucumber.messages.version>21.0.1</cucumber.messages.version>
+		            <maven.compiler.target>${java.version}</maven.compiler.target>
+            <maven.compiler.source>${java.version}</maven.compiler.source>
 	</properties>
 
 
 	<repositories>
-		<repository>
+		<!--<repository>
 			<id>eviware</id>
 			<url>http://www.soapui.org/repository/maven2</url>
-		</repository>
+		</repository>-->
+		
+		<repository>
+        <id>soapui</id>
+        <url>https://www.soapui.org/repository/maven2</url>
+    </repository>
 	</repositories>
 
-
 	<dependencies>
+	
+       <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-suite</artifactId>
+                <version>${junit-platform-suite.version}</version>
+                <scope>test</scope>
+            </dependency>
 
-		<dependency>
+        <!-- Cucumber JVM -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit-platform-engine</artifactId> <!-- Para rodar no JUnit 5 -->
+            <version>${cucumber.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Allure Cucumber 7 JVM -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber7-jvm</artifactId>
+            <version>${allure.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+		<!--<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>
 			<version>1.2.5</version>
@@ -37,7 +90,7 @@
 			<artifactId>cucumber-junit</artifactId>
 			<version>1.2.5</version>
 			<scope>test</scope>
-		</dependency>
+		</dependency>-->
 
 
 		<dependency>
@@ -59,6 +112,11 @@
 					<artifactId>jfxrt</artifactId>
 
 				</exclusion>
+				
+				<exclusion>
+  <groupId>com.smartbear.utils.analytics</groupId>
+   <artifactId>*</artifactId>
+</exclusion>
 
 			</exclusions>
 
@@ -114,43 +172,42 @@
 
 	<build>
 		<plugins>
-
-			<plugin>
-				<!-- https://mvnrepository.com/artifact/com.trivago.rta/cluecumber-report-plugin -->
-				<groupId>com.trivago.rta</groupId>
-				<artifactId>cluecumber-report-plugin</artifactId>
-				<version>1.10.2</version>
-				<executions>
-					<execution>
-						<id>report</id>
-						<phase>post-integration-test</phase>
-						<goals>
-							<goal>reporting</goal>
-						</goals>
-					</execution>
-				</executions>
+		
+		<plugin>
+				<groupId>io.qameta.allure</groupId>
+				<artifactId>allure-maven</artifactId>
+				<version>${allure-maven.version}</version>
 				<configuration>
-					<sourceJsonReportDirectory>${cucumber.report.json.location}</sourceJsonReportDirectory>
-					<generatedHtmlReportDirectory>${generated.report.location}</generatedHtmlReportDirectory>
-
-
-					<!-- Optional custom CSS for custom styling -->
-					<!--<customCss>custom\custom.css</customCss> -->
-
-					<!-- Optional skip property for the whole report generation -->
-					<!--<skip>true</skip> -->
+					<reportVersion>${allure.version}</reportVersion>
+					<allureDownloadUrl>
+						${allure.cmd.download.url}/${allure.version}/allure-commandline-${allure.version}.zip
+					</allureDownloadUrl>
 				</configuration>
 			</plugin>
+			
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+					<argLine>
+                    --add-opens=java.base/java.lang=ALL-UNNAMED
+                    --add-opens=java.base/sun.security.ssl=ALL-UNNAMED
+                    --add-opens=java.base/java.util=ALL-UNNAMED
+                    --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+					-javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
+                </argLine>
+                        <properties>
+                            <configurationParameters>
+                                cucumber.publish.quiet=true
+                                cucumber.publish.enabled=false
+                                cucumber.junit-platform.naming-strategy=long
+                                cucumber.plugin=pretty
+                            </configurationParameters>
+                        </properties>
+                    </configuration>
+                </plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
 

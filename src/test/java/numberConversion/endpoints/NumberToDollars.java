@@ -43,7 +43,7 @@ public class NumberToDollars extends BaseEndpoint implements Endpoint {
 			response_body = testRunnerSOAPUI.getRunContext().expand("${" + endpoint + "#Response}").toString();
 
 			if (response_body.equals("")) {
-				Assert.fail("Nome do endpoint na feature está diferente do projeto SOAPUI");
+				Assert.fail("Nome do endpoint na feature esta diferente do projeto SOAPUI");
 			} else {
 				System.out.println(response_body);
 			}
