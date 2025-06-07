@@ -1,0 +1,1 @@
+{"feb516d79a496a6d78591d2ecb66873c":{"statistic":{"failed":0,"broken":0,"skipped":0,"passed":1,"unknown":0,"total":1},"items":[{"uid":"cc78d4924b48c511","reportUrl":"https://clark-ewerton.github.io/webservice-soapui-xml-java-junit-cucumber-automated-testing/9//#testresult/cc78d4924b48c511","status":"passed","time":{"start":1749319157571,"stop":1749319160591,"duration":3020}}]}}
