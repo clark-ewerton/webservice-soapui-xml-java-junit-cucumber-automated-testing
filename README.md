@@ -27,15 +27,16 @@ webservice-soapui-xml-java-junit-cucumber-automated-testing/
 │  │  │  │  │  │  │  |  ├─ NumberConversionBuilder.java
 │  │  │  │  │  │  ├─ endpoints/
 │  │  │  │  │  │  │  ├─ NumberToDollars.java
-│  │  │  │  │  │  ├─ features/
-│  │  │  │  │  │  │  |  ├─ numberConversion.feature
 │  │  │  │  │  │  ├─ runner/
 │  │  │  │  │  │  │  |  ├─ RunnerNumberConversion.java
 │  │  │  │  │  │  ├─ steps/
 │  │  │  │  │  │  │  |  ├─ NumberToDollars_Steps.java
 │  │  ├─ resources/
+│  │  │  ├─ numberConversion/features
+│  │  │  │  ├─ numberConversion.feature
 │  │  │  ├─ soapui/
 │  │  │  │  ├─ NumberConversion-soapui-project.xml
+│  │  │  ├─ allure.properties
 ├─ .gitignore
 ├─ pom.xml
 ├─ README.md
@@ -45,19 +46,18 @@ webservice-soapui-xml-java-junit-cucumber-automated-testing/
 
 This project using the following languages and frameworks:
 
-* [Java 8](https://openjdk.java.net/projects/jdk8/) as the programming language
-* [JUnit 4](https://junit.org/junit4/) as the UnitTest framework to support the test creation
+* [Java 24](https://openjdk.java.net/projects/jdk24/) as the programming language
+* [JUnit 5](https://junit.org/junit5/) as the UnitTest framework to support the test creation
 * [Cucumber](https://cucumber.io/) as the tool that supports Behaviour-Driven Development(BDD) making out tests more describable
 * [Maven](https://maven.apache.org/) as the Java build tool
-* [Eclipse](https://www.eclipse.org/) as the IDE
 * [SOAPUI program](https://www.soapui.org/) as a way to create the XML's body templates and link it to the Maven's project afterwards.
 * [SOAPUI's Maven library](https://www.soapui.org/docs/test-automation/maven/maven-2-x/) as the library for Maven to connect the programming logic to the SOAPUI's program installed in your machine. It's where all the testing automating truly happens.
 * [XML Path](https://mvnrepository.com/artifact/io.rest-assured/xml-path/3.0.0) as the library from RestAssured to make the assertions in XML's body.
-
+* [Allure Reports](https://mvnrepository.com/artifact/io.rest-assured/xml-path/3.0.0](https://allurereport.org/) as the main report
 
 ## How to run it?
 
-All you have to do is run the class called 'RunnerNumberConversion' as a Junit test.
+All you have to do is run the class called 'RunnerNumberConversion' as a Junit test. Or you can just run as a maven using the command: mvn test
 
 ## Test architecture
 
@@ -74,7 +74,26 @@ Do you have any other items to add to this test architecture? Please do a pull r
 * Builder
 * BaseEndpoint
 
-### Generate Report
-I'm using the Cluecumber Report Plugin to generate the reports, so after you run the Runner class using Junit4 or directly into Maven, then all you have to do is execute, at the project's root, the Maven command: mvn install
+## GitHub Actions CI/CD
+The workflow file `.github/workflows/cicd.yml` includes two jobs:
 
-By doing so, the report will be generated because it's looking to the 'json' directory. Navigate into the project -> target -> cluecumber-report, then execute the file 'index.html'.
+`run-api-tests`: runs tests on a local emulator on GitHub-hosted runners using Ubuntu.
+
+`deploy-report`: generates an Allure report and publishes it to GitHub Pages.
+
+Allure results are stored as artifacts and published after every execution, regardless of test results.
+
+## Allure Reports
+After every test execution, Allure reports are generated and published to:
+
+🔗 https://clark-ewerton.github.io/webservice-soapui-xml-java-junit-cucumber-automated-testing
+
+## Contributing
+Contributions are welcome!
+Feel free to open issues, fork the repository, and submit pull requests.
+
+If you find this project useful, please consider giving it a star to help increase its visibility.
+
+## License
+This project is licensed under the MIT License.
+See the LICENSE file for more details.
