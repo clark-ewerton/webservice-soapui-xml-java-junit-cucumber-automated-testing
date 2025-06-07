@@ -1,4 +1,8 @@
-# Project to demonstrate how to automate testing from a XML request-response flow using SOAPUI's Maven library along Java, Maven, Junit, Cucumber
+# Project to demonstrate how to automate testing from a XML request-response flow using SOAPUI's Maven library along Java 24 + Maven + Junit 5 + Cucumber + CI/CD (Github Actions and Pages) + Allure Reports
+
+[![Api CI/CD](https://github.com/clark-ewerton/webservice-soapui-xml-java-junit-cucumber-automated-testing/workflows/API%20Tests%20CI/badge.svg)](https://github.com/clark-ewerton/webservice-soapui-xml-java-junit-cucumber-automated-testing/actions/workflows/cicd.yml)
+[![Pages Status](https://img.shields.io/badge/GitHub%20Pages-Online-green)](https://clark-ewerton.github.io/webservice-soapui-xml-java-junit-cucumber-automated-testing/)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
 Don't forget to give this project a ⭐
 
