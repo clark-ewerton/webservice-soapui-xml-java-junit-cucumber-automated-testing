@@ -21,6 +21,9 @@ jobs:
         java-version: '24'
         distribution: 'temurin'
 
+    - name: Limpar repositório Maven local
+      run: rm -rf ~/.m2/repository
+
     - name: Run Maven Tests
       run: mvn clean test
 
