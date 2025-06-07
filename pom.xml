@@ -7,9 +7,9 @@
 	<properties>
 	 <aspectj.version>1.9.6</aspectj.version>
 		<java.version>21</java.version>
-		<project.encondig>UTF-8</project.encondig>
-            <project.build.sourceEncoding>${project.encondig}</project.build.sourceEncoding>
-            <project.reporting.outputEncoding>${project.encondig}</project.reporting.outputEncoding>
+		<project.enconding>UTF-8</project.enconding>
+            <project.build.sourceEncoding>${project.enconding}</project.build.sourceEncoding>
+            <project.reporting.outputEncoding>${project.enconding}</project.reporting.outputEncoding>
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-surefire-plugin.version>3.0.0-M8</maven-surefire-plugin.version>
 		<maven-failsafe-plugin.version>3.0.0-M8</maven-failsafe-plugin.version>
