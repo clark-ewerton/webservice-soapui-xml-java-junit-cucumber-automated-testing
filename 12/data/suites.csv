@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","2850","Deve validar conversao de um numero para dollar","","Sat Jun 07 18:11:04 GMT 2025","passed","Sat Jun 07 18:11:07 GMT 2025","","WebService numberToDollars","Deve validar conversao de um numero para dollar",""
